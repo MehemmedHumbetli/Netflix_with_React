@@ -5,7 +5,7 @@ const Modal = ({ isOpen, item, onClose }) => {
 
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-gray-900 text-white rounded-lg w-[500px] shadow-lg relative">
+            <div className="bg-gray-900 text-white rounded-lg w-[700px] shadow-lg relative">
                 <button
                     className="absolute top-2 right-2 text-gray-400 hover:text-white"
                     onClick={onClose}
@@ -15,7 +15,7 @@ const Modal = ({ isOpen, item, onClose }) => {
                 <img
                     src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                     alt={item.title}
-                    className="w-full h-[250px] object-cover rounded-t-lg"
+                    className="w-full h-[380px] object-cover rounded-t-lg"
                 />
                 <div className="p-5">
                     <h2 className="text-2xl font-bold mb-2">{item.title}</h2>

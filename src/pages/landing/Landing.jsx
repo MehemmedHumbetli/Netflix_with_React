@@ -12,9 +12,11 @@ const Landing = () => {
     <div className='w-screen'>
         <Entry/>
         <Arch/>
-        <Trending/>
-        <ReasonsToJoin/>
-        <FAQ/>
+        <div className='w-full px-[144px] relative bg-black'>
+            <Trending/>
+            <ReasonsToJoin/>
+            <FAQ/>
+        </div>
     </div>
   )
 }

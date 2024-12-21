@@ -34,7 +34,7 @@ const Trending = ({ setItem }) => {
 
     return (
         <div className='text-white bg-black'>
-            <div className='py-20 w-full h-screen px-[130px]'>
+            <div className='py-14 mb-[3.1rem]'>
                 <h3 className='text-3xl font-semibold mb-4'>Trending Now</h3>
                 <select
                     value={selectedOption}
