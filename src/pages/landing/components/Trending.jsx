@@ -32,6 +32,15 @@ const Trending = ({ setItem }) => {
         setIsModalOpen(true);
     };
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedItem(null);
+    };
+
+    useEffect(() => {
+        document.body.style.overflow = isModalOpen ? "hidden" : "scroll"
+    })
+
     return (
         <div className='text-white bg-black'>
             <div className='py-14 mb-[3.1rem]'>
@@ -55,7 +64,7 @@ const Trending = ({ setItem }) => {
                     )}
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} item={selectedItem} onClose={() => setIsModalOpen(false)} />
+            <Modal isOpen={isModalOpen} item={selectedItem} closeModal={closeModal} />
         </div>
     );
 };
