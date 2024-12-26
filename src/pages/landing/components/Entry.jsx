@@ -7,7 +7,7 @@ const Entry = () => {
             <div className='flex justify-between items-center max-w-[120rem] pl-[100px] pr-[125px] mt-[-20px]'>
                 <img className='w-[9.9rem] h-[3rem] ' src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="logoNetflix" />
                 <div>
-                    <select className='w-[132px] h-[32px] mr-5 bg-black/50 rounded-[5px] border border-gray-600'>
+                    <select className='w-[132px] h-[32px] mr-5 bg-black/50 rounded-[5px] border border-gray-600'>   
                         <option value="" selected>English</option>
                         <option value="">Russian</option>
                     </select>

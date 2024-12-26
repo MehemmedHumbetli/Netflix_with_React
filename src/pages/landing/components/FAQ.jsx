@@ -17,7 +17,7 @@ const [openAccordion, setOpenAccordion] = useState(null)
                 },
                 {
                         title: "Where can I watch?",
-                        desc: "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.You can also download your favorite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.",
+                        desc: "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.\nYou can also download your favorite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.",
                         id : 3,
                 },
                 {
@@ -32,12 +32,12 @@ const [openAccordion, setOpenAccordion] = useState(null)
                 },
                 {
                         title: "Is Netflix good for kids?",
-                        desc: "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.                       Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.",
+                        desc: "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.\n                       Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.",
                         id : 6,
                 },
                 {
                         title: "Why am I seeing this language?",
-                        desc: "",
+                        desc: "Your browser preferences determine the language shown here.",
                         id : 7,
                 },
         ]
