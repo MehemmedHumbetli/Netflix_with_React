@@ -77,6 +77,7 @@ const Homepage = () => {
     <div className='relative bg-black min-h-screen'>
         <Navbar tabItems={tabItems} setSelectedTab={setSelectedTab} selectedTab={selectedTab} />
         {visibleTab()}
+        <Shows/>
     </div>
   )
 }

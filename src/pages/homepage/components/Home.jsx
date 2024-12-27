@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import top10 from "../../../assets/images/Top10.svg"
+import play from "../../../assets/images/play.svg"
+import info from "../../../assets/images/info.svg"
 
 const Home = ({visibleItem}) => {
 
@@ -16,8 +18,14 @@ return (
                 </div>
                 <p className='mt-4 text-xl'>{visibleItem.overview.slice(0,150)}...</p>
                 <div className='flex items-center gap-2 mt-4'>
-                        <button className='bg-white px-6 py-3 font-bold text-black rounded-[4px]'>Play</button>
-                        <button className='bg-[#515451] px-6 py-3 rounded-[4px]'>More Info</button>
+                        <button className='flex items-center bg-white px-6 py-3 font-bold text-black rounded-[4px]'>
+                        <img className="w-6 h-6 mr-2" src={play} alt="" />
+                                Play
+                        </button>
+                        <button className='flex items-center bg-[#515451] px-6 py-3 rounded-[4px]'>
+                        <img className='w-6 h-6 mr-2' src={info} alt="" />
+                                More Info
+                        </button>
                 </div>
         </div>
     </div>
