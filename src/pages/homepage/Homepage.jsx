@@ -78,6 +78,7 @@ const Homepage = () => {
         <Navbar tabItems={tabItems} setSelectedTab={setSelectedTab} selectedTab={selectedTab} />
         {visibleTab()}
         <Shows/>
+        <Movies/>
     </div>
   )
 }
