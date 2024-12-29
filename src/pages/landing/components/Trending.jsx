@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import Modal from './Modal';
+import ScrollButton from '../../../assets/common/Button';
 
 const Trending = ({ setItem }) => {
     const [data, setData] = useState([]);
@@ -56,12 +57,17 @@ const Trending = ({ setItem }) => {
                         <option key={op} value={op}>{op}</option>
                     ))}
                 </select>
-                <div className='w-full flex gap-12 overflow-scroll overflow-y-hidden py-5 pl-7'>
-                    {data.map((item, index) =>
-                        <div key={index} onClick={() => handleCardClick(item)}>
+                
+                <div className='relative'>
+                    <ScrollButton direction="left"/>
+                        <div id='movie-card-container' className='w-full overflow-x-scroll no-scrollbar flex gap-12 py-5 pl-7'>
+                            {data.map((item, index) =>
+                            <div key={index} onClick={() => handleCardClick(item)}>
                             <MovieCard className='' setItem={setItem} item={item} index={index} />
-                        </div>
-                    )}
+                            </div>
+                            )}
+                         </div>
+                    <ScrollButton direction='right'/>
                 </div>
             </div>
             <Modal isOpen={isModalOpen} item={selectedItem} closeModal={closeModal} />

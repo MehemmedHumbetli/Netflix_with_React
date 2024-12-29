@@ -4,7 +4,7 @@ import NotFound from "../../../assets/images/NotFound.jpg";
 const Shows = ({ data }) => {
   return (
     <div className="grid grid-cols-4 gap-4 p-40 m-18">
-      {data && Array.isArray(data) && data.length > 0 ? (
+      {data ? (
         data.map((show, index) => (
           <div
             key={index}
