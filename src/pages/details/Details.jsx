@@ -1,25 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router'
-import { useEffect } from 'react'
-import { details, div } from 'motion/react-client'
+import { useLocation } from "react-router";
+import { useStore } from "zustand";
+import { themeStore } from "../../assets/common/Store.js";
+import { useEffect, useState } from "react";
 
 const Details = () => {
-  const {id,type} = useLocation().state
-//   const [detailsData, setDetailsData] =
+
+  const [error, setError] = useState(null);
+  const { token } = useStore(themeStore);
+  const { id, type } = useLocation().state;
+
+  const getDetails = async () => {
+    try {
+      const response = await fetch(`http://localhost:5001/api/v1/${type}/${id}/details`, {
+        headers: {
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setDetailsData(data.content);
+      } else {
+        setError('Failed to fetch details.');
+      }
+      console.log(data)
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getDetails()
+  }, [id, type]);
+
+
   return (
-    <div>
-        <iframe className='w-[800px] h-[400px] mx-auto' src="" frameborder="0">
+    <div className="pb-10">
+      SALAM
+    </div>
+  );
+};
 
-        </iframe>
-        <div className='p-10'>
-            <h1 className='text-white text-4xl'>{detailsData.name ? detailsData.name : detailsData.title}</h1>
-            <div className='flex items-center gap-2 my-5'>
-                {detailsData?.genres.map(item => <div className='text-white bg-zinc-800 w-fit p-3 rounded-[4px]'>{item.name}</div>)}
-            </div>
-            <p className='text-white'>{detailsData.overview}</p>
-        </div>
-    </div>  
-  )
-}
-
-export default Details
+export default Details;
