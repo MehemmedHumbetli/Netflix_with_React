@@ -1,13 +1,13 @@
 
-import { useState,useEffect } from "react"
+// import { useState,useEffect } from "react"
 
-const Similar = ({id,type}) => {
-  const [data,setData] = useState([])
-  const {token} = useStore(themStore)
+// const Similar = ({id,type}) => {
+//   const [data,setData] = useState([])
+//   const {token} = useStore(themStore)
 
-return (
+// return (
         
-  )
-}
+//   )
+// }
 
-export default Similar
+// export default Similar
