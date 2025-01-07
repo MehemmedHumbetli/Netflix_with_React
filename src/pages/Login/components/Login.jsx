@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useStore } from 'zustand';
+import { themeStore } from '../../../assets/common/Store';
 
 const Login = () => {
+  const {addToken} = useStore(themeStore);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -29,17 +32,15 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Invalid credentials');
+        throw new Error(data.message || 'Invalid credentials');
+      } else{
+        addToken(data.token);
+        navigate('/home')
       }
 
-      const data = await response.json();
-      console.log('API :', data);
-      localStorage.setItem('accessToken', data.token);
-
-
-      navigate('/home');
     } catch (err) {
       setError(err.message);
     }

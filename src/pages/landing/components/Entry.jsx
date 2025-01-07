@@ -1,6 +1,8 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router'
 
 const Entry = () => {
+    const Navigate = useNavigate()
     return (
 
         <div className="text-white p-10 w-full h-screen bg-black/70 bg-blend-overlay bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/729ce5c2-d831-436a-8c9d-f38fea0b99b3/web/AZ-en-20241209-TRIFECTA-perspective_a09d6162-5992-4ec3-a2b8-9081ca80c5b0_large.jpg')]">
@@ -11,7 +13,9 @@ const Entry = () => {
                         <option value="" selected>English</option>
                         <option value="">Russian</option>
                     </select>
-                    <button className='w-[75.59px] h-[32px] bg-[#e50914] rounded-[5px]'>Sign in</button>
+                    <button onClick={() => {
+                        Navigate('/login')
+                    }} className='w-[75.59px] h-[32px] bg-[#e50914] rounded-[5px]'>Sign in</button>
                 </div>
             </div>
 
