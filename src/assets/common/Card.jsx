@@ -22,7 +22,7 @@ const Card = ({ item, type }) => {
       />
 
       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300 ease-in">
-        <p className="text-white text-center font-bold">{item.overview}</p>
+        <p className="text-white text-center text-sm font-bold">{item.overview}</p>
       </div>
     </button>
   );

@@ -2,6 +2,7 @@ import { useLocation } from "react-router";
 import { useStore } from "zustand";
 import { themeStore } from "../../assets/common/Store";
 import { useEffect, useState } from "react";
+import Similar from "./components/Similar";
 
 const Details = () => {
   const [detailsData, setDetailsData] = useState({});
@@ -53,8 +54,10 @@ const Details = () => {
       <iframe
         className="w-[800px] h-[400px] mx-auto"
         src={`https://www.youtube.com/embed/${trailersData[0]?.key}`}
+        
         frameBorder="0"
       ></iframe>
+      {console.log(trailersData[0])}
       <div className="p-10">
         <h1 className="text-white text-4xl">
           {detailsData.name ? detailsData.name : detailsData.title}
@@ -71,7 +74,7 @@ const Details = () => {
         </div>
         <p className="text-white">{detailsData.overview}</p>
       </div>
-      {/* <Similar id={id} type={type} /> */}
+      <Similar id={id} type={type} />
     </div>
   );
 };
