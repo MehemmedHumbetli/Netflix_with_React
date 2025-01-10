@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router';
 import { useStore } from 'zustand';
 import { themeStore } from '../../../assets/common/Store';
 
 const Login = () => {
-  const {addToken} = useStore(themeStore);
+  const { addToken } = useStore(themeStore);
+  const location = useLocation(); // URL'den state'i al
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    email: '',
+    email: location.state?.email || '', // Yönlendirilen e-posta adresi varsa, inputa yaz
     password: '',
   });
 
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,9 +39,9 @@ const Login = () => {
 
       if (!response.ok) {
         throw new Error(data.message || 'Invalid credentials');
-      } else{
+      } else {
         addToken(data.token);
-        navigate('/home')
+        navigate('/home');
       }
 
     } catch (err) {

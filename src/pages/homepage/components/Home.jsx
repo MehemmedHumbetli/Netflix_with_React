@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import top10 from "../../../assets/images/Top10.svg"
 import play from "../../../assets/images/play.svg"
 import info from "../../../assets/images/info.svg"
+import Card from "../../../assets/common/Card";
 
 const Home = ({visibleItem}) => {
 
